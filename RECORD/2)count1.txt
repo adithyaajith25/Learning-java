@@ -1,0 +1,38 @@
+*************************************************************************************************************************************************************************************************
+Name 		: Adithya Ajith
+Semester 	: S3
+Branch 		: Computer Science and Engineering
+Roll no		: 5
+Date		: 01/10/2022
+Description	: FREQUENCY OF CHARACTER IN A STRING
+*************************************************************************************************************************************************************************************************
+import java.util.Scanner;
+class count1{
+	public static void main(String args[]){
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter string-");
+		String a=sc.nextLine();
+		System.out.println("Enter char to check for-");
+		char b=sc.next().charAt(0);
+		sc.close();
+		
+		int count=0;
+		for(int i=0;i<a.length();i++){
+			if(a.charAt(i)==b){
+				count++;
+			}
+		}
+		
+		System.out.println("Frequency of occurence of char "+b+" is "+count+".\n");
+	}
+} 
+*************************************************************************************************************************************************************************************************
+Output
+*************************************************************************************************************************************************************************************************
+Enter string-
+Albus Percieval Wolfric Brian Dumbledoor
+Enter char to check for-
+i
+Frequency of occurence of char i is 3.
+
+

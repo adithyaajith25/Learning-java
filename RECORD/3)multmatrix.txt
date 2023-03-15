@@ -1,0 +1,123 @@
+****************************************************************************************************
+Name 		: Adithya Ajith
+Semester 	: S3
+Branch 		: Computer Science and Engineering
+Roll no		: 5
+Date		: 13/10/2022
+Description	: MATRIX MULTIPLICATION
+****************************************************************************************************
+
+import java.util.Scanner;
+public class multmatrix{
+	public static void main(String args[]){
+		int m,n,o,p;
+		 Scanner sc= new Scanner(System.in);
+		 System.out.println("Enter the no of rows and columns of matrix 1:");
+		 m=sc.nextInt();
+		 n=sc.nextInt();
+		 
+		  System.out.println("Enter the no of rows and columns of matrix 2:");
+		 o=sc.nextInt();
+		 p=sc.nextInt();
+		 
+		 if(n==o){						//Checking if no of rows of B = no of columns of A
+		 	int [][]A=new int [m][n];
+			int [][]B=new int [o][p];
+			int [][]C=new int [m][p];
+			
+			System.out.println();							//READING MATRICES
+			System.out.println("Matrix A-: ");
+			for (int i=0;i<m;i++){
+				for(int j=0;j<n;j++){
+			 		System.out.println("Enter element "+i+" "+j+" : ");
+			 		A[i][j]=sc.nextInt();
+			 	}
+			 }
+			
+			System.out.println();
+			System.out.println("Matrix B-: ");
+			for (int i=0;i<o;i++){
+				for(int j=0;j<p;j++){
+					System.out.println("Enter element "+i+" "+j+" : ");
+					B[i][j]=sc.nextInt();
+				}
+			}
+			
+			for (int i=0;i<m;i++){							//Multiplication
+				for(int j=0;j<p;j++){
+					C[i][j]=0;
+					for(int k=0;k<n;k++)
+						C[i][j]+=A[i][k]*B[k][j];
+				}
+			}
+			System.out.println();
+		     System.out.println("product : ");
+		     System.out.println();
+			for (int i=0;i<m;i++){  							//display
+				for(int j=0;j<p;j++)
+					System.out.print("\t"+C[i][j]);
+				System.out.println();
+			}
+			}
+		else
+			System.out.print("No of rows and column incompatible.");
+		 
+		 
+		 sc.close();
+	}
+}
+
+****************************************************************************************************
+Output
+****************************************************************************************************
+Enter the no of rows and columns of matrix 1:
+3 3
+Enter the no of rows and columns of matrix 2:
+3 3
+
+Matrix A-: 
+Enter element 0 0 : 
+1
+Enter element 0 1 : 
+2
+Enter element 0 2 : 
+3
+Enter element 1 0 : 
+1
+Enter element 1 1 : 
+2
+Enter element 1 2 : 
+3
+Enter element 2 0 : 
+1
+Enter element 2 1 : 
+2
+Enter element 2 2 : 
+3
+
+Matrix B-: 
+Enter element 0 0 : 
+3
+Enter element 0 1 : 
+4
+Enter element 0 2 : 
+5
+Enter element 1 0 : 
+3
+Enter element 1 1 : 
+4
+Enter element 1 2 : 
+5
+Enter element 2 0 : 
+3
+Enter element 2 1 : 
+4
+Enter element 2 2 : 
+5
+
+product : 
+
+	18	24	30
+	18	24	30
+	18	24	30
+

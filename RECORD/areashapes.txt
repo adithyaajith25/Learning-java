@@ -1,0 +1,89 @@
+*****************************************************************************************
+Name 		: Adithya Ajith
+Semester 	: S3
+Branch 		: Computer Science and Engineering
+Roll no		: 5
+Date		: 20/10/2022
+Description	: Method Overloading
+*****************************************************************************************
+import java.util.Scanner;
+class Box{
+	double vol(double a,double b,double c){		//triangle
+		double s=(a+b+c)/2;
+		return Math.sqrt(s*(s-a)*(s-b)*(s-c));
+	}
+	
+	double vol(double a,double b){			//rectangle
+		return a*b;
+	}
+	
+	double vol(double a){				//circle
+		return 3.1415*a*a;
+	}
+}
+
+class volumeshapes{
+	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		Box B=new Box();
+		System.out.println("Enter\n1 for triangle.\n2 for rectangle.\n3 for circle.");
+		int n=sc.nextInt();
+		if (n==1){
+			System.out.println("Enter 3 sides-");
+			double a=sc.nextDouble();
+			double b=sc.nextDouble();
+			double c=sc.nextDouble();
+			System.out.println("Area of triangle is "+B.vol(a,b,c));
+		}else if (n==2){
+			System.out.println("Enter 2 sides-");
+			double a=sc.nextDouble();
+			double b=sc.nextDouble();
+			System.out.println("Area of rectangle is "+B.vol(a,b));
+		}else if (n==3){
+			System.out.println("Enter Radius-");
+			double a=sc.nextDouble();
+			System.out.println("Area of triangle is "+B.vol(a));
+		}else
+			System.out.println("Entered incorrect option");
+		sc.close();
+		
+	}
+}
+*****************************************************************************************
+Output
+*****************************************************************************************
+<1>
+Enter
+1 for triangle.
+2 for rectangle.
+3 for circle.
+1
+Enter 3 sides-
+6
+8
+10
+Area of triangle is 24.0
+
+<2>
+Enter
+1 for triangle.
+2 for rectangle.
+3 for circle.
+2
+Enter 2 sides-
+4
+5
+Area of rectangle is 20.0
+
+<3>
+Enter
+1 for triangle.
+2 for rectangle.
+3 for circle.
+3
+Enter Radius-
+1
+Area of triangle is 3.1415
+
+
+		

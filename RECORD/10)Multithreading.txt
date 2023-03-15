@@ -1,0 +1,85 @@
+***************************************************************************
+Name 		: Adithya Ajith
+Semester 	: S3
+Branch 		: Computer Science and Engineering
+Roll no		: 5
+Date		: 01/12/2022
+Description	: MULTITHREADING
+***************************************************************************
+
+import java.util.Random;
+class RandomThread extends Thread{
+	public void run(){
+		Random r=new Random();
+		for(int i=0;i<20;i++){
+			int n=r.nextInt(100);
+			if(n%2==0){
+				new Even(n).start();
+			}
+			else{
+				new Odd(n).start();
+			}
+			try{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException e){
+				System.out.println(e);
+			}
+		}
+	}
+}
+
+class Even extends Thread{
+	private int num;
+	public Even(int num){
+		this.num=num;
+	}
+	public void run(){
+		System.out.println("Square of "+num+" = "+(num*num));
+	}
+}
+
+class Odd extends Thread{
+	private int num;
+	public Odd(int num){
+		this.num=num;
+	}
+	public void run(){
+		System.out.println("cube of "+num+" = "+(num*num*num));
+	}
+}
+
+class Test{
+	public static void main(String args[]){
+		RandomThread r=new RandomThread();
+		r.start();
+		
+	}
+}
+
+***************************************************************************
+Output
+***************************************************************************
+
+Square of 28 = 784
+cube of 35 = 42875
+Square of 18 = 324
+Square of 26 = 676
+cube of 49 = 117649
+cube of 7 = 343
+Square of 44 = 1936
+Square of 14 = 196
+Square of 40 = 1600
+cube of 35 = 42875
+Square of 2 = 4
+cube of 85 = 614125
+Square of 60 = 3600
+cube of 33 = 35937
+Square of 68 = 4624
+cube of 87 = 658503
+Square of 18 = 324
+Square of 52 = 2704
+Square of 8 = 64
+cube of 47 = 103823
+			
+		
